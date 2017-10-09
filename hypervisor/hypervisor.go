@@ -72,7 +72,6 @@ func (ctx *VmContext) Launch() {
 	var err error
 
 	ctx.DCtx.Launch(ctx)
-
 	//launch routines
 	if ctx.Boot.BootFromTemplate {
 		ctx.Log(TRACE, "boot from template")

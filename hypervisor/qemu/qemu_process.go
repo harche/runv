@@ -146,6 +146,7 @@ func launchQemu(qc *QemuContext, ctx *hypervisor.VmContext) {
 	cmd.Stdout = stdout
 	cmd.Stderr = stderr
 
+	fmt.Println("%+v", cmd)
 	err := cmd.Run()
 
 	if stdout.Len() != 0 {
@@ -160,6 +161,7 @@ func launchQemu(qc *QemuContext, ctx *hypervisor.VmContext) {
 		ctx.Hub <- &hypervisor.VmStartFailEvent{Message: "try to start qemu failed"}
 		return
 	}
+
 
 	var file *os.File
 	t := time.NewTimer(time.Second * 5)

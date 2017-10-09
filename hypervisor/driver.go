@@ -23,6 +23,7 @@ type BootConfig struct {
 	Bios             string
 	Cbfs             string
 	Vbox             string
+	ContainerRootFs  string
 
 	// For network QoS (kilobytes/s)
 	InboundAverage  string

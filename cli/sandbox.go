@@ -74,6 +74,7 @@ func setupFactory(context *cli.Context, spec *specs.Spec) (factory.Factory, erro
 		Bios:        bios,
 		Cbfs:        cbfs,
 		EnableVsock: vsock,
+		ContainerRootFs: spec.Root.Path,
 	}
 	return singlefactory.Dummy(bootConfig), nil
 }
